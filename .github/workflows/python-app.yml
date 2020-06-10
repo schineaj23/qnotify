@@ -8,7 +8,7 @@ on:
   - pull_request
 
 jobs:
-  build:
+  test-lin:
 
     runs-on: ubuntu-latest
 
@@ -29,7 +29,11 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-  exe:
+    - name: Testrun on linux
+      run : |
+        python python/main.py
+  
+  test-win:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
@@ -41,10 +45,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pyinstaller
-      - name: generate exe
+      - name: Lint with pylint
         run: |
-          pyinstaller --noconfirm --onefile --nowindowed --name "qnotify"  "python/main.py"
-      - name: run test
+          pylint python/main.py
+      - name: Testrun on windows
         run: |
           python python/main.py
