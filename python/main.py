@@ -35,7 +35,7 @@ def hour_passed():
         start_time = time.time()
     return ret
 
-def connected(cur_line, increased):
+def connected(cur_line, increased, first_time):
     print(cur_line)
     index = cur_line.find("e:")
     current_pos = int(cur_line[3+index:]) # our current position in queue
@@ -45,7 +45,7 @@ def connected(cur_line, increased):
     if increased:
         print("Increased! sending msg")
         embed = discord.Embed()
-        embed.title = "Still in queue"
+        embed.title = "Welcome to queue!" if first_time else "Still in queue" 
         embed.description = "Current Time: `{:0>2d}:{:0>2d}`\nCurrent Position: `{}`".format(loc_time.tm_hour, loc_time.tm_min, current_pos)
         embed.color = 4437377
         loop.run_until_complete(dm(embed))
@@ -63,7 +63,7 @@ def connected(cur_line, increased):
         embed.description = "Get to the computer now! You're first in line!"
         embed.color = 7506394
         loop.run_until_complete(dm(embed))
-    elif current_pos < 10:
+    elif current_pos <= 10:
         print("about to join server!")
         embed = discord.Embed()
         embed.title = "Close to joining!"
@@ -81,6 +81,16 @@ def disconnected():
     embed.description = "Dropped from 2b2t Queue Server, attempting to reconnect.\nCurrent Time: `{:0>2d}:{:0>2d}`".format(loc_time.tm_hour, loc_time.tm_min)
     embed.color = 15746887
     loop.create_task(dm(embed))
+
+def server_down():
+    loc_time = time.localtime()
+    print("server may be down, sending msg")
+    embed = discord.Embed()
+    embed.title = "Server Down"
+    embed.description = "You have been dropped from the server >5 times. 2b2t may be down.\nCurrent Time: `{:0>2d}:{:0>2d}`".format(loc_time.tm_hour, loc_time.tm_min)
+    embed.color = 15746887
+    loop.create_task(dm(embed))
+
 def follow(thefile):
     thefile.seek(0,2)
     while True:
@@ -95,6 +105,7 @@ if __name__ == "__main__":
     loglines = follow(logfile)
     set_state(False)
     asyncio.set_event_loop(loop)
+    connection_count = 0
     try:
         print("logging into discord")
         loop.create_task(client.login(token))
@@ -103,10 +114,20 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         loop.run_until_complete(client.logout())
     print("connected, now running program")
-    for line in loglines:
+    it = (line for line in loglines)
+    for index, line in enumerate(it):
         if "[main/INFO]: [CHAT] Position in queue:" in line:
-            connected(line, hour_passed())
+            if index == 0: # print our first position
+                connected(line, True, True)
+            connection_count = 0
+            connected(line, hour_passed(), False)
             print("{:0>2d}:{:0>2d}".format(time.localtime().tm_hour, time.localtime().tm_min))
         elif "Started saving saved containers in a new thread" in line:
             disconnected()
             set_state(True)
+        elif "[main/INFO]: Connecting to 2b2t.org, 25565" in line:
+            connection_count += 1
+            print("can't connect", connection_count)
+            if connection_count >= 5 and not get_state():
+                server_down()
+                set_state(True)
