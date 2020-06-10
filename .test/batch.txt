@@ -421,87 +421,6 @@
 [12:46:12] [main/INFO]: Connecting to 2b2t.org, 25565
 [12:46:14] [main/ERROR]: Can't ping 2b2t.org: Disconnected
 [12:46:15] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:46:15] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:46:16] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:46:16] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:46:17] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:46:17] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:46:18] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:46:19] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:46:20] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:46:23] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:46:26] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:46:30] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:46:33] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:46:37] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:46:40] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:46:44] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:46:47] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:46:50] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:46:54] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:46:57] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:01] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:04] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:07] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:11] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:14] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:18] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:21] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:24] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:28] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:31] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:35] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:38] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:42] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:45] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:47:46] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:47:46] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:47:47] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:47:47] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:47:48] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:47:49] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:53] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:56] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:47:59] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:03] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:06] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:10] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:13] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:16] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:20] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:24] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:48:24] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:48:24] [main/ERROR]: Can't ping 2b2t.org: Disconnected
-[12:48:28] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:31] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:35] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:38] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:42] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:45] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:49] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:52] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:55] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:48:59] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:02] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:06] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:09] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:12] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:16] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:19] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:23] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:26] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:29] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:33] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:36] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:40] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:43] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:46] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:50] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:53] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:49:57] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:50:00] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:50:03] [main/INFO]: Connecting to 2b2t.org, 25565
-[12:50:07] [main/INFO]: Connecting to 2b2t.org, 25565
 [12:50:09] [main/ERROR]: Can't ping 2b2t.org: Disconnected
 [12:50:09] [main/ERROR]: Can't ping 2b2t.org: Disconnected
 [12:50:09] [main/ERROR]: Can't ping 2b2t.org: Disconnected
@@ -1875,29 +1794,6 @@
 [15:59:51] [main/INFO]: [CHAT] Position in queue: 4
 [16:00:01] [main/INFO]: [CHAT] Position in queue: 4
 [16:00:11] [main/INFO]: [CHAT] Position in queue: 4
-[16:00:21] [main/INFO]: [CHAT] Position in queue: 4
-[16:00:31] [main/INFO]: [CHAT] Position in queue: 4
-[16:00:41] [main/INFO]: [CHAT] Position in queue: 4
-[16:00:51] [main/INFO]: [CHAT] Position in queue: 4
-[16:01:01] [main/INFO]: [CHAT] Position in queue: 4
-[16:01:11] [main/INFO]: [CHAT] Position in queue: 4
-[16:01:21] [main/INFO]: [CHAT] Position in queue: 1
-[16:01:31] [main/INFO]: [CHAT] Position in queue: 1
 [16:01:39] [pool-5-thread-2/INFO]: [STDOUT]: World save took 2ms
-[16:01:41] [main/INFO]: [CHAT] Position in queue: 1
-[16:01:51] [main/INFO]: [CHAT] Position in queue: 1
-[16:02:01] [main/INFO]: [CHAT] Position in queue: 1
-[16:02:11] [main/INFO]: [CHAT] Position in queue: 1
-[16:02:21] [main/INFO]: [CHAT] Position in queue: 1
-[16:02:31] [main/INFO]: [CHAT] Position in queue: 1
-[16:02:41] [main/INFO]: [CHAT] Position in queue: 1
-[16:02:51] [main/INFO]: [CHAT] Position in queue: 1
-[16:03:01] [main/INFO]: [CHAT] Position in queue: 1
-[16:03:11] [main/INFO]: [CHAT] Position in queue: 1
-[16:03:21] [main/INFO]: [CHAT] Position in queue: 1
-[16:03:31] [main/INFO]: [CHAT] Position in queue: 1
-[16:03:41] [main/INFO]: [CHAT] Position in queue: 1
-[16:03:51] [main/INFO]: [CHAT] Position in queue: 1
-[16:04:01] [main/INFO]: [CHAT] Position in queue: 1
 [16:04:11] [main/INFO]: [CHAT] Position in queue: 1
 [16:04:12] [main/INFO]: [CHAT] Connecting to the server...

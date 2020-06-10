@@ -9,6 +9,7 @@ class Globals:
     start_time = time.time()
     loop = asyncio.get_event_loop()
     last_pos = 0
+    debug=False
 
     def get_state(self):
         return self.reconnecting
@@ -30,9 +31,14 @@ async def dm(msg):
 
 def notify(title, desc, color):
     embed = discord.Embed()
-    embed.title = title
-    embed.description = desc
-    embed.color = color
+    if g.debug:
+        embed.title = "DEBUG: " + title
+        embed.description = "**This is a test from GitHub**\n" + desc
+        embed.color = color
+    else:
+        embed.title = title
+        embed.description = desc
+        embed.color = color
     g.loop.run_until_complete(dm(embed))
 
 def minute_passed():
@@ -93,6 +99,7 @@ if __name__ == "__main__":
     except FileNotFoundError:
         logfile = open(".test/batch.txt")
         loglines = logfile.readlines()
+        g.debug = True
     g.set_state(False)
     asyncio.set_event_loop(g.loop)
     try:
@@ -117,9 +124,10 @@ if __name__ == "__main__":
         elif "[main/INFO]: Connecting to 2b2t.org, 25565" in line:
             connection_count += 1
             print("can't connect", connection_count)
-            if connection_count >= 5 and not g.get_state():
+            if connection_count >= 5:
                 server_down()
                 g.set_state(True)
+                connection_count = 0
         elif "[CHAT] Connecting to the server..." in line:
             notify("Joining 2b2t", "You made it! You are now joining 2b2t", 7506394)
             exit()
