@@ -102,7 +102,7 @@ if __name__ == "__main__":
     try:
         logfile = open(os.getenv("APPDATA")+"/.minecraft/logs/latest.log", "r")
         loglines = follow(logfile)
-    except FileNotFoundError:
+    except FileNotFoundError or TypeError:
         logfile = open(".test/batch.txt")
         loglines = logfile.readlines()
         g.debug = True
