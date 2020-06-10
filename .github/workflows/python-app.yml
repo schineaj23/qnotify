@@ -45,3 +45,7 @@ jobs:
       - name: generate exe
         run: |
           pyinstaller --noconfirm --onefile --nowindowed --name "qnotify"  "python/main.py"
+      - name: run test
+        run: |
+          copy .test/batch.txt %AppData%/.minecraft/logs/latest.log
+          start.bat
