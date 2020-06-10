@@ -87,8 +87,12 @@ def follow(thefile):
         yield line
 
 if __name__ == "__main__":
-    logfile = open(os.getenv("APPDATA")+"/.minecraft/logs/latest.log", "r")
-    loglines = follow(logfile)
+    try:
+        logfile = open(os.getenv("APPDATA")+"/.minecraft/logs/latest.log", "r")
+        loglines = follow(logfile)
+    except FileNotFoundError:
+        logfile = open(".test/batch.txt")
+        loglines = logfile.readlines()
     g.set_state(False)
     asyncio.set_event_loop(g.loop)
     try:
