@@ -1,22 +1,17 @@
+#! python3
 import time, os
-from twilio.rest import Client
-from enum import Enum
+import discord, asyncio
 
-class PhoneAccount:
-    account_sid = ''
-    auth_token = ''
-    my_num = ''
-    from_num = ''
-    def __init__(self, s, t, m, f):
-        self.account_sid = s
-        self.auth_token = t
-        self.my_num = m
-        self.from_num = f
+token = "***REMOVED***"
+client = discord.Client()
 
-main_account = PhoneAccount("***REMOVED***", "***REMOVED***", "***REMOVED***", "***REMOVED***")
-backup_account = PhoneAccount("***REMOVED***", "***REMOVED***", "+***REMOVED***", "***REMOVED***") # ***REMOVED***
-client = Client(main_account.account_sid, main_account.auth_token)
-global reconnecting, start_time
+async def dm(msg):
+    user = await client.fetch_user(***REMOVED***)
+    await user.send(embed=msg)
+
+reconnecting = False
+start_time = time.time()
+loop = asyncio.get_event_loop()
 
 def get_state():
     global reconnecting
@@ -49,36 +44,43 @@ def connected(cur_line, increased):
     loc_time = time.localtime()
     if increased:
         print("Increased! sending msg")
-        client.messages.create(
-            to=main_account.my_num,
-            from_=main_account.from_num,
-            body="\nStill in 2b2t queue as of {}:{}!\nCurrent Position: {}".format(loc_time.tm_hour, loc_time.tm_min, current_pos)
-        )
+        embed = discord.Embed()
+        embed.title = "Still in queue"
+        embed.description = "Current Time: `{:0>2d}:{:0>2d}`\nCurrent Position: `{}`".format(loc_time.tm_hour, loc_time.tm_min, current_pos)
+        embed.color = 4437377
+        loop.run_until_complete(dm(embed))
     elif get_state():
-        client.messages.create(
-            to=main_account.my_num,
-            from_=main_account.from_num,
-            body="\nReconnected to 2b2t queue as of {}:{}!\nCurrent Position: {}".format(loc_time.tm_hour, loc_time.tm_min, current_pos)
-        )
+        embed = discord.Embed()
+        embed.title = "Connected"
+        embed.description = "Connected to 2b2t Queue Server!\nCurrent Position: `{}`".format(current_pos)
+        embed.color = 4437377
+        loop.run_until_complete(dm(embed))
         set_state(False)
     elif current_pos == 1:
         print("about to join server!")
-        client.messages.create(
-            to=main_account.my_num,
-            from_=main_account.from_num,
-            body="\nYou are first in 2b2t queue as of {}:{}!\nCome to the computer now!".format(loc_time.tm_hour, loc_time.tm_min)
-        )
+        embed = discord.Embed()
+        embed.title = "First in Queue!"
+        embed.description = "Get to the computer now! You're first in line!"
+        embed.color = 7506394
+        loop.run_until_complete(dm(embed))
+    elif current_pos < 10:
+        print("about to join server!")
+        embed = discord.Embed()
+        embed.title = "Close to joining!"
+        embed.description = "Heads up, you're in the top 10!\nCurrent Position: `{}`".format(current_pos)
+        embed.color = 16763904
+        loop.run_until_complete(dm(embed))
+
 
 def disconnected():
     loc_time = time.localtime()
     print("disconnected from 2b2t, sending msg")
-    print("\nDisconnected from 2b2t as of {}:{}! Attempting to reconnect.".format(loc_time.tm_hour, loc_time.tm_min))
-    client.messages.create(
-        to=main_account.my_num,
-        from_=main_account.from_num,
-        body="\nDisconnected from 2b2t as of {}:{}! Attempting to reconnect.".format(loc_time.tm_hour, loc_time.tm_min)
-    )
-
+    print("\nDisconnected from 2b2t as of {:0>2d}:{:0>2d}! Attempting to reconnect.".format(loc_time.tm_hour, loc_time.tm_min))
+    embed = discord.Embed()
+    embed.title = "Disconnected"
+    embed.description = "Dropped from 2b2t Queue Server, attempting to reconnect.\nCurrent Time: `{:0>2d}:{:0>2d}`".format(loc_time.tm_hour, loc_time.tm_min)
+    embed.color = 15746887
+    loop.create_task(dm(embed))
 def follow(thefile):
     thefile.seek(0,2)
     while True:
@@ -91,13 +93,20 @@ def follow(thefile):
 if __name__ == "__main__":
     logfile = open(os.getenv("APPDATA")+"/.minecraft/logs/latest.log", "r")
     loglines = follow(logfile)
-    global start_time
-    start_time = time.time()
     set_state(False)
+    asyncio.set_event_loop(loop)
+    try:
+        print("logging into discord")
+        loop.create_task(client.login(token))
+        print("connecting")
+        loop.create_task(client.connect())
+    except KeyboardInterrupt:
+        loop.run_until_complete(client.logout())
+    print("connected, now running program")
     for line in loglines:
         if "[main/INFO]: [CHAT] Position in queue:" in line:
             connected(line, hour_passed())
-            print("{}:{}".format(time.localtime().tm_hour, time.localtime().tm_min))
+            print("{:0>2d}:{:0>2d}".format(time.localtime().tm_hour, time.localtime().tm_min))
         elif "Started saving saved containers in a new thread" in line:
             disconnected()
             set_state(True)
