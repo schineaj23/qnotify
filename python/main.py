@@ -67,7 +67,6 @@ def connected(cur_line, increased, first_time):
         notify("Close to joining!", "Heads up, you're in the top 10!\nCurrent Position: `{}`".format(current_pos), 16763904)
     g.set_last_pos(current_pos)
 
-
 def disconnected():
     loc_time = time.localtime()
     print("disconnected from 2b2t, sending msg")
@@ -92,7 +91,6 @@ if __name__ == "__main__":
     loglines = follow(logfile)
     g.set_state(False)
     asyncio.set_event_loop(g.loop)
-    connection_count = 0
     try:
         print("logging into discord")
         g.loop.create_task(g.client.login(g.token))
@@ -100,6 +98,7 @@ if __name__ == "__main__":
         g.loop.create_task(g.client.connect())
     except KeyboardInterrupt:
         g.loop.run_until_complete(g.client.logout())
+    connection_count = 0
     print("connected, now running program")
     it = (line for line in loglines)
     for index, line in enumerate(it):
