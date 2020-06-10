@@ -161,6 +161,6 @@ if __name__ == "__main__":
                 g.set_state(True)
                 CONNECTION_COUNT = 0
         elif "[CHAT] Connecting to the server..." in line:
-            notify("Joining 2b2t", "You made it! You are now joining 2b2t", 7506394, True, "Time Elapsed: `{:4d}` minutes\nStarting Position: `{}`\nDisconnections: `{}`".format(
-                (time.time()-g.start_time)/60, g.start_pos, TOTAL_CONNECTION_COUNT))
+            notify("Joining 2b2t", "You made it! You are now joining 2b2t", 7506394, True, "Time Elapsed: `{}` minutes\nStarting Position: `{}`\nDisconnections: `{}`".format(
+                int((time.time()-g.start_time)/60), g.start_pos, TOTAL_CONNECTION_COUNT))
             sys.exit()
