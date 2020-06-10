@@ -38,20 +38,26 @@ async def dm(msg):
     await user.send(embed=msg)
 
 
+async def txt(msg):
+    text_channel = await g.client.fetch_channel(720325502983864325)
+    await text_channel.send(embed=msg)
+
+
 def notify(title, desc, color, field=False, field_stats=""):
     embed = discord.Embed()
+    if field:
+        embed.add_field(name="Your Stats", value=field_stats)
     if g.debug:
         embed.title = "DEBUG: " + title
         embed.description = "**This is a test from GitHub**\n**Platform:** `{}`\n".format(
             sys.platform) + desc
         embed.color = color
+        g.loop.run_until_complete(txt(embed))
     else:
         embed.title = title
         embed.description = desc
         embed.color = color
-    if field:
-        embed.add_field(name="Your Stats", value=field_stats)
-    g.loop.run_until_complete(dm(embed))
+        g.loop.run_until_complete(dm(embed))
 
 
 def minute_passed():
