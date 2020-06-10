@@ -10,6 +10,7 @@ class Globals:
     loop = asyncio.get_event_loop()
     last_pos = 0
     debug=False
+    start_pos=0
 
     def get_state(self):
         return self.reconnecting
@@ -29,7 +30,7 @@ async def dm(msg):
     user = await g.client.fetch_user(528600920787779607)
     await user.send(embed=msg)
 
-def notify(title, desc, color):
+def notify(title, desc, color, field=False, field_stats=""):
     embed = discord.Embed()
     if g.debug:
         embed.title = "DEBUG: " + title
@@ -39,6 +40,8 @@ def notify(title, desc, color):
         embed.title = title
         embed.description = desc
         embed.color = color
+    if field:
+        embed.add_field(name="Your Stats", value=field_stats)
     g.loop.run_until_complete(dm(embed))
 
 def minute_passed():
@@ -59,6 +62,8 @@ def connected(cur_line, increased, first_time):
     loc_time = time.localtime()
     if g.get_last_pos() == current_pos:
             return
+    elif first_time:
+        g.start_pos = current_pos
     if increased:
         print("Increased! sending msg")
         notify("Welcome to queue!" if first_time else "Still in queue", "Current Time: `{:0>2d}:{:0>2d}`\nCurrent Position: `{}`".format(loc_time.tm_hour, loc_time.tm_min, current_pos), 4437377)
@@ -110,6 +115,8 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         g.loop.run_until_complete(g.client.logout())
     connection_count = 0
+    total_connection_count = 0
+    start_time = time.time()
     print("connected, now running program")
     it = (line for line in loglines)
     for index, line in enumerate(it):
@@ -123,11 +130,12 @@ if __name__ == "__main__":
             g.set_state(True)
         elif "[main/INFO]: Connecting to 2b2t.org, 25565" in line:
             connection_count += 1
+            total_connection_count += 1
             print("can't connect", connection_count)
             if connection_count >= 5:
                 server_down()
                 g.set_state(True)
                 connection_count = 0
         elif "[CHAT] Connecting to the server..." in line:
-            notify("Joining 2b2t", "You made it! You are now joining 2b2t", 7506394)
+            notify("Joining 2b2t", "You made it! You are now joining 2b2t", 7506394, True, "Time Elapsed: `{}` minutes\nStarting Position: `{}`\nDisconnections: `{}`".format((time.time()-g.start_time)/60, g.start_pos, total_connection_count))
             exit()
