@@ -47,5 +47,4 @@ jobs:
           pyinstaller --noconfirm --onefile --nowindowed --name "qnotify"  "python/main.py"
       - name: run test
         run: |
-          start.bat
-          output/qnotify.exe
+          python python/main.py
