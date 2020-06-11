@@ -7,10 +7,11 @@ import discord
 
 
 class Globals:
-    token = "NzIwMjc4MjA4OTIxOTkzMjk3.XuEDQQ.Zp76NSVPqY8OLrBvN1sd552yym8"
+    token = ""
+    user_id = 0
+    channel_id = 0
     client = discord.Client()
     reconnecting = False
-    start_time = time.time()
     loop = asyncio.get_event_loop()
     last_pos = 0
     debug = False
@@ -31,15 +32,26 @@ class Globals:
 
 
 g = Globals()
+START_TIME = 0
+
+
+def get_start_time():
+    global START_TIME
+    return START_TIME
+
+
+def set_start_time(n):
+    global START_TIME
+    START_TIME = n
 
 
 async def dm(msg):
-    user = await g.client.fetch_user(528600920787779607)
+    user = await g.client.fetch_user(g.user_id)
     await user.send(embed=msg)
 
 
 async def txt(msg):
-    text_channel = await g.client.fetch_channel(720325502983864325)
+    text_channel = await g.client.fetch_channel(g.channel_id)
     await text_channel.send(embed=msg)
 
 
@@ -61,16 +73,18 @@ def notify(title, desc, color, field=False, field_stats=""):
 
 
 def minute_passed():
-    ret = time.time() - g.start_time >= 60
+    ret = time.time() - get_start_time() >= 59
+    print("{} {}".format(ret, time.time()-get_start_time()))
     if ret:
-        g.start_time = time.time()
+        set_start_time(time.time())
     return ret
 
 
 def hour_passed():
-    ret = time.time() - g.start_time >= 3600
+    ret = time.time() - get_start_time() >= 3599
+    print("{} {}".format(ret, time.time()-get_start_time()))
     if ret:
-        g.start_time = time.time()
+        set_start_time(time.time())
     return ret
 
 
@@ -126,8 +140,7 @@ def follow(thefile):
             continue
         yield line
 
-
-if __name__ == "__main__":
+def get_platform_lines():
     try:
         if sys.platform.startswith('win32'):
             logfile = open(os.getenv("APPDATA") +
@@ -141,8 +154,15 @@ if __name__ == "__main__":
         logfile = open(".test/batch.txt")
         loglines = logfile.readlines()
         g.debug = True
-    g.set_state(False)
-    asyncio.set_event_loop(g.loop)
+    return loglines
+
+def connect_to_discord():
+    try:
+        g.token = os.getenv('API_TOKEN')
+        g.user_id = int(os.getenv('API_USER'))
+        g.channel_id = int(os.getenv('API_TEST'))
+    except:
+        print("could not find any environment variables, using vars from globals")
     try:
         print("logging into discord")
         g.loop.create_task(g.client.login(g.token))
@@ -150,9 +170,15 @@ if __name__ == "__main__":
         g.loop.create_task(g.client.connect())
     except KeyboardInterrupt:
         g.loop.run_until_complete(g.client.logout())
+
+if __name__ == "__main__":
+    loglines = get_platform_lines()
+    g.set_state(False)
+    asyncio.set_event_loop(g.loop)
+    connect_to_discord()
     CONNECTION_COUNT = 0
     TOTAL_CONNECTION_COUNT = 0
-    start_time = time.time()
+    ABSOLUTE_START_TIME = time.time()
     print("connected, now running program")
     it = (line for line in loglines)
     for index, line in enumerate(it):
@@ -160,7 +186,8 @@ if __name__ == "__main__":
             if g.first_time:  # print our first position
                 connected(line, True)
             CONNECTION_COUNT = 0
-            connected(line, hour_passed())
+            connected(line, minute_passed())
+            print(line)
         elif "Started saving saved containers in a new thread" in line:
             disconnected()
             g.set_state(True)
@@ -174,5 +201,5 @@ if __name__ == "__main__":
                 CONNECTION_COUNT = 0
         elif "[CHAT] Connecting to the server..." in line:
             notify("Joining 2b2t", "You made it! You are now joining 2b2t", 7506394, True, "Time Elapsed: `{}` minutes\nStarting Position: `{}`\nDisconnections: `{}`".format(
-                int((time.time()-g.start_time)/60), g.start_pos, TOTAL_CONNECTION_COUNT))
+                int((time.time()-ABSOLUTE_START_TIME)/60), g.start_pos, TOTAL_CONNECTION_COUNT))
             sys.exit()
