@@ -30,7 +30,7 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Set Keys
-      env: |
+      env: 
         API_TOKEN: ${{ secrets.API_TOKEN }}
         API_USER: ${{ secrets.API_USER }}
         API_TEST: ${{ secrets.API_TEST }}
@@ -56,7 +56,7 @@ jobs:
         run: |
           pylint python/main.py --exit-zero
       - name: Set Keys
-        env: |
+        env: 
           API_TOKEN: ${{ secrets.API_TOKEN }}
           API_USER: ${{ secrets.API_USER }}
           API_TEST: ${{ secrets.API_TEST }}
@@ -86,7 +86,7 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Set Keys
-      env: |
+      env: 
         API_TOKEN: ${{ secrets.API_TOKEN }}
         API_USER: ${{ secrets.API_USER }}
         API_TEST: ${{ secrets.API_TEST }}
