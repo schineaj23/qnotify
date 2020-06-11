@@ -8,7 +8,7 @@ on:
   - pull_request
 
 jobs:
-  build:
+  test-lin:
 
     runs-on: ubuntu-latest
 
@@ -29,8 +29,14 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-  exe:
+    - name: Testrun on linux
+      run : |
+        python python/main.py
+  
+  test-win:
+
     runs-on: windows-latest
+
     steps:
       - uses: actions/checkout@v2
       - name: Set up python 3.8
@@ -41,11 +47,34 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pyinstaller
-      - name: generate exe
+      - name: Lint with pylint
         run: |
-          pyinstaller --noconfirm --onefile --nowindowed --name "qnotify"  "python/main.py"
-      - name: run test
+          pylint python/main.py --exit-zero
+      - name: Testrun on windows
         run: |
-          copy .test/batch.txt %AppData%/.minecraft/logs/latest.log
-          start.bat
+          python python/main.py
+
+  test-mac:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Testrun on mac
+      run : |
+        python python/main.py
