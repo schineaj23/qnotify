@@ -1,3 +1,4 @@
 # qnotify
-![qnotify](https://github.com/schineaj23/qnotify/workflows/qnotify/badge.svg?event=push)
+![qnotify](https://github.com/schineaj23/qnotify/workflows/qnotify/badge.svg)
+
 Send 2b2t queue notifications to phone!
