@@ -160,7 +160,8 @@ def connect_to_discord():
     try:
         g.token = os.getenv('API_TOKEN')
         g.user_id = int(os.getenv('API_USER'))
-        g.channel_id = int(os.getenv('API_TEST'))
+        if(g.debug):
+            g.channel_id = int(os.getenv('API_TEST'))
     except:
         print("could not find any environment variables, using vars from globals")
     try:
