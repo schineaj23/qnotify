@@ -1,23 +1,23 @@
 [11:51:06] [main/INFO]: Connecting to 2b2t.org, 25565
 [11:51:07] [main/INFO]: [CHAT] 2b2t is full
-[11:51:08] [main/INFO]: [STDOUT]: Baritone world data dir: C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1
-[11:51:08] [main/INFO]: [STDOUT]: Cached world directory: C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
-[11:51:08] [main/INFO]: [STDOUT]: Would save waypoints to C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\waypoints
-[11:51:08] [pool-5-thread-1/INFO]: [STDOUT]: Loading region 0,0 from disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[11:51:08] [main/INFO]: [STDOUT]: Baritone world data dir: C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1
+[11:51:08] [main/INFO]: [STDOUT]: Cached world directory: C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[11:51:08] [main/INFO]: [STDOUT]: Would save waypoints to C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\waypoints
+[11:51:08] [pool-5-thread-1/INFO]: [STDOUT]: Loading region 0,0 from disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
 [11:51:08] [pool-5-thread-1/INFO]: [STDOUT]: Loaded region successfully in 32ms
-[11:51:08] [pool-5-thread-1/INFO]: [STDOUT]: Loading region -1,0 from disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[11:51:08] [pool-5-thread-1/INFO]: [STDOUT]: Loading region -1,0 from disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
 [11:51:08] [pool-5-thread-1/INFO]: [STDOUT]: Loaded region successfully in 10ms
-[11:51:08] [pool-5-thread-1/INFO]: [STDOUT]: Loading region 0,-1 from disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[11:51:08] [pool-5-thread-1/INFO]: [STDOUT]: Loading region 0,-1 from disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
 [11:51:08] [pool-5-thread-1/INFO]: [STDOUT]: Loaded region successfully in 7ms
-[11:51:08] [pool-5-thread-1/INFO]: [STDOUT]: Loading region -1,-1 from disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[11:51:08] [pool-5-thread-1/INFO]: [STDOUT]: Loading region -1,-1 from disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
 [11:51:08] [pool-5-thread-1/INFO]: [STDOUT]: Loaded region successfully in 5ms
 [11:51:08] [main/INFO]: [CHAT] Position in queue: 848
 [11:51:18] [main/INFO]: [CHAT] Position in queue: 846
 [11:51:28] [main/INFO]: [CHAT] Position in queue: 844
-[11:51:38] [pool-5-thread-2/INFO]: [STDOUT]: Saving region -1,0 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
-[11:51:38] [ForkJoinPool.commonPool-worker-2/INFO]: [STDOUT]: Saving region -1,-1 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
-[11:51:38] [ForkJoinPool.commonPool-worker-3/INFO]: [STDOUT]: Saving region 0,0 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
-[11:51:38] [ForkJoinPool.commonPool-worker-1/INFO]: [STDOUT]: Saving region 0,-1 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[11:51:38] [pool-5-thread-2/INFO]: [STDOUT]: Saving region -1,0 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[11:51:38] [ForkJoinPool.commonPool-worker-2/INFO]: [STDOUT]: Saving region -1,-1 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[11:51:38] [ForkJoinPool.commonPool-worker-3/INFO]: [STDOUT]: Saving region 0,0 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[11:51:38] [ForkJoinPool.commonPool-worker-1/INFO]: [STDOUT]: Saving region 0,-1 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
 [11:51:38] [ForkJoinPool.commonPool-worker-3/INFO]: [STDOUT]: Saved region successfully
 [11:51:38] [ForkJoinPool.commonPool-worker-2/INFO]: [STDOUT]: Saved region successfully
 [11:51:38] [pool-5-thread-2/INFO]: [STDOUT]: Saved region successfully
@@ -355,13 +355,13 @@
 [12:42:27] [main/INFO]: Connecting to 2b2t.org, 25565
 [12:43:34] [main/INFO]: Connecting to 2b2t.org, 25565
 [12:43:35] [main/INFO]: [CHAT] 2b2t is full
-[12:43:35] [main/INFO]: [STDOUT]: Baritone world data dir: C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1
+[12:43:35] [main/INFO]: [STDOUT]: Baritone world data dir: C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1
 [12:43:39] [pool-5-thread-3/INFO]: [STDOUT]: Started saving the world in a new thread
 [12:43:39] [pool-5-thread-4/INFO]: [STDOUT]: Started saving saved containers in a new thread
-[12:43:39] [pool-5-thread-3/INFO]: [STDOUT]: Saving region -1,0 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
-[12:43:39] [ForkJoinPool.commonPool-worker-7/INFO]: [STDOUT]: Saving region -1,-1 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
-[12:43:39] [ForkJoinPool.commonPool-worker-0/INFO]: [STDOUT]: Saving region 0,0 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
-[12:43:39] [ForkJoinPool.commonPool-worker-6/INFO]: [STDOUT]: Saving region 0,-1 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[12:43:39] [pool-5-thread-3/INFO]: [STDOUT]: Saving region -1,0 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[12:43:39] [ForkJoinPool.commonPool-worker-7/INFO]: [STDOUT]: Saving region -1,-1 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[12:43:39] [ForkJoinPool.commonPool-worker-0/INFO]: [STDOUT]: Saving region 0,0 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[12:43:39] [ForkJoinPool.commonPool-worker-6/INFO]: [STDOUT]: Saving region 0,-1 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
 [12:43:39] [ForkJoinPool.commonPool-worker-7/INFO]: [STDOUT]: Saved region successfully
 [12:43:39] [pool-5-thread-3/INFO]: [STDOUT]: Saved region successfully
 [12:43:39] [ForkJoinPool.commonPool-worker-6/INFO]: [STDOUT]: Saved region successfully
@@ -380,7 +380,7 @@
 [12:44:21] [main/INFO]: Connecting to 2b2t.org, 25565
 [12:44:38] [main/INFO]: Connecting to 2b2t.org, 25565
 [12:44:39] [main/INFO]: [CHAT] 2b2t is full
-[12:44:39] [main/INFO]: [STDOUT]: Baritone world data dir: C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1
+[12:44:39] [main/INFO]: [STDOUT]: Baritone world data dir: C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1
 [12:44:44] [main/INFO]: [CHAT] Position in queue: 893
 [12:44:54] [main/INFO]: [CHAT] Position in queue: 892
 [12:45:04] [main/INFO]: [CHAT] Position in queue: 886
@@ -405,10 +405,10 @@
 [12:45:54] [main/INFO]: [CHAT] Position in queue: 864
 [12:45:55] [pool-5-thread-3/INFO]: [STDOUT]: Started saving the world in a new thread
 [12:45:55] [pool-5-thread-4/INFO]: [STDOUT]: Started saving saved containers in a new thread
-[12:45:55] [pool-5-thread-3/INFO]: [STDOUT]: Saving region -1,0 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
-[12:45:55] [ForkJoinPool.commonPool-worker-3/INFO]: [STDOUT]: Saving region -1,-1 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
-[12:45:55] [ForkJoinPool.commonPool-worker-4/INFO]: [STDOUT]: Saving region 0,0 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
-[12:45:55] [ForkJoinPool.commonPool-worker-2/INFO]: [STDOUT]: Saving region 0,-1 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[12:45:55] [pool-5-thread-3/INFO]: [STDOUT]: Saving region -1,0 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[12:45:55] [ForkJoinPool.commonPool-worker-3/INFO]: [STDOUT]: Saving region -1,-1 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[12:45:55] [ForkJoinPool.commonPool-worker-4/INFO]: [STDOUT]: Saving region 0,0 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[12:45:55] [ForkJoinPool.commonPool-worker-2/INFO]: [STDOUT]: Saving region 0,-1 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
 [12:45:55] [ForkJoinPool.commonPool-worker-3/INFO]: [STDOUT]: Saved region successfully
 [12:45:55] [pool-5-thread-3/INFO]: [STDOUT]: Saved region successfully
 [12:45:55] [ForkJoinPool.commonPool-worker-2/INFO]: [STDOUT]: Saved region successfully
@@ -730,7 +730,7 @@
 [13:06:53] [main/INFO]: Connecting to 2b2t.org, 25565
 [13:06:57] [main/INFO]: Connecting to 2b2t.org, 25565
 [13:06:57] [main/INFO]: [CHAT] 2b2t is full
-[13:06:58] [main/INFO]: [STDOUT]: Baritone world data dir: C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1
+[13:06:58] [main/INFO]: [STDOUT]: Baritone world data dir: C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1
 [13:07:03] [main/INFO]: [CHAT] Position in queue: 283
 [13:07:13] [main/INFO]: [CHAT] Position in queue: 280
 [13:07:23] [main/INFO]: [CHAT] Position in queue: 275
@@ -759,10 +759,10 @@
 [13:11:13] [main/INFO]: [CHAT] Position in queue: 263
 [13:11:23] [main/INFO]: [CHAT] Position in queue: 263
 [13:11:33] [main/INFO]: [CHAT] Position in queue: 263
-[13:11:38] [pool-5-thread-2/INFO]: [STDOUT]: Saving region -1,0 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
-[13:11:38] [ForkJoinPool.commonPool-worker-6/INFO]: [STDOUT]: Saving region 0,0 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
-[13:11:38] [ForkJoinPool.commonPool-worker-5/INFO]: [STDOUT]: Saving region -1,-1 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
-[13:11:38] [ForkJoinPool.commonPool-worker-4/INFO]: [STDOUT]: Saving region 0,-1 to disk C:\Users\***REMOVED*** ***REMOVED***\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[13:11:38] [pool-5-thread-2/INFO]: [STDOUT]: Saving region -1,0 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[13:11:38] [ForkJoinPool.commonPool-worker-6/INFO]: [STDOUT]: Saving region 0,0 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[13:11:38] [ForkJoinPool.commonPool-worker-5/INFO]: [STDOUT]: Saving region -1,-1 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
+[13:11:38] [ForkJoinPool.commonPool-worker-4/INFO]: [STDOUT]: Saving region 0,-1 to disk C:\Users\Andrew Schineller\AppData\Roaming\.minecraft\baritone\2b2t.org\DIM1\cache
 [13:11:38] [ForkJoinPool.commonPool-worker-5/INFO]: [STDOUT]: Saved region successfully
 [13:11:38] [pool-5-thread-2/INFO]: [STDOUT]: Saved region successfully
 [13:11:38] [ForkJoinPool.commonPool-worker-6/INFO]: [STDOUT]: Saved region successfully
