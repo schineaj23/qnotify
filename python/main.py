@@ -129,9 +129,15 @@ def follow(thefile):
 
 if __name__ == "__main__":
     try:
-        logfile = open(os.getenv("APPDATA")+"/.minecraft/logs/latest.log", "r")
+        if sys.platform.startswith('win32'):
+            logfile = open(os.getenv("APPDATA") +
+                           "/.minecraft/logs/latest.log", "r")
+        elif sys.platform.startswith('linux'):  # linux people be like:
+            logfile = open("~/.minecraft/logs/latest.log", "r")
+        else:  # mac people be like
+            logfile = open("~/Library/Application Support/minecraft", "r")
         loglines = follow(logfile)
-    except:
+    except:  # imagine not having minecraft
         logfile = open(".test/batch.txt")
         loglines = logfile.readlines()
         g.debug = True
