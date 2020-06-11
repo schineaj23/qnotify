@@ -187,7 +187,7 @@ if __name__ == "__main__":
             if g.first_time:  # print our first position
                 connected(line, True)
             CONNECTION_COUNT = 0
-            connected(line, minute_passed())
+            connected(line, hour_passed())
             print(line)
         elif "Started saving saved containers in a new thread" in line:
             disconnected()
